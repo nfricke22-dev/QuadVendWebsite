@@ -1,6 +1,9 @@
 const form = document.querySelector("#request-form");
 const formStatus = document.querySelector("#form-status");
-const requestList = document.querySelector("#request-list");
+
+// INTENTIONAL BUG:
+// The HTML uses id="request-list", not id="requests-list".
+const requestList = document.querySelector("#requests-list");
 
 function renderRequests() {
     const requests =
@@ -44,26 +47,24 @@ form.addEventListener("submit", function (event) {
         email: document.querySelector("#email").value,
         message: document.querySelector("#message").value
     };
+
     const savedRequests =
-    JSON.parse(localStorage.getItem("requests")) || [];
+        JSON.parse(localStorage.getItem("requests")) || [];
 
-    renderRequests();
+    savedRequests.push(formData);
 
-savedRequests.push(formData);
+    localStorage.setItem(
+        "requests",
+        JSON.stringify(savedRequests)
+    );
 
-localStorage.setItem(
-    "requests",
-    JSON.stringify(savedRequests)
-);
-
-console.log(savedRequests);
-
-    console.log(formData);
+    console.log(savedRequests);
 
     formStatus.textContent =
         `Thanks, ${formData.businessName}. Your request was captured locally, but it has not been sent.`;
 
     form.reset();
+    renderRequests();
 });
 
 const changeHeadingButton =
@@ -92,9 +93,11 @@ changeHeadingButton.addEventListener("click", function () {
     );
 });
 
-const themeButton = document.querySelector("#toggle-theme");
+const themeButton =
+    document.querySelector("#toggle-theme");
 
-const savedTheme = localStorage.getItem("theme");
+const savedTheme =
+    localStorage.getItem("theme");
 
 if (savedTheme === "dark") {
     document.body.classList.add("dark-mode");
