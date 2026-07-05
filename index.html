@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>QuadVend</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+
+
+<body>
+
+
+<header>
+
+    <h1>QuadVend</h1>
+        <P>Smart vending solutions for modern busineses.</P>
+
+    <nav>
+        <a class="cta-button" href="#contact">Request a Machine</a>
+        <a href="#services">Services</a>
+        <a href="#coming-soon">Coming Soon</a>
+    </nav>
+</header>
+
+
+
+<main>
+
+    <button id="change-heading">Change Heading</button>
+    <button id="toggle-theme">Toggle Dark Mode</button>
+   
+
+    <section>
+        <h2>What We Offer</h2>
+    
+    <ul>
+      <li>Modern vending machines</li>
+      <li>Inventory management</li>
+      <li>Machine placement partnerships</li>
+    </ul>
+</section>
+
+
+<section>
+    <section id="services">
+        <h2>Coming Soon</h2>
+
+    <p>
+    QuadVend is preparing to bring convenient vending solutions
+    to businesses throughout the Quad Cities.
+    </p>
+</section>
+
+
+
+    <section id="contact">
+    <h2>Request a Machine</h2>
+
+    <form id="request-form">
+
+
+    <label for="business-name">Business name</label>
+
+    <input
+        type="text"
+        id="business-name"
+        name="businessName"
+        required
+    >
+
+        <label for="email">Email address</label>
+    <input
+        type="email"
+        id="email"
+        name="email"
+        required
+>
+
+        <label for="message">Tell us about your location</label>
+        <textarea
+            id="message"
+            name="message"
+            rows="5"
+        ></textarea>
+
+
+        
+        <button type="submit">Send Request</button>
+    
+    </form>
+
+
+    <section id="saved-requests">
+         <h2>Saved Test Requests</h2>
+         <ul id="request-list"></ul>
+    </section>
+
+    <p id="form-status"></p>
+
+    <p>
+        Contact QuadVend to discuss placing a vending machine
+        at your business.
+    </p>
+</section>
+</main>
+    <footer>
+        <p>Copyright 2026 QuadVend</p>
+    </footer>
+<script src="script.js"></script>
+</body>
+</html> 
